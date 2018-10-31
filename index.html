@@ -88,8 +88,8 @@
 
 <!--<div id= 'submit' class='button'> Submit </div>-->
 
-<p id='score' class='fScore'>Final score will appear here</p>
-
+<p id='score' class='fScore'></p>
+<p id='advice' class='qTitle'></p>
 <div style="cursor: pointer;" onclick="theFunction()">
 
 
@@ -97,28 +97,47 @@
 var total = 0;
 var buttonClicked = "background: #E1E6E1; border-color: #E1E6E1; color: #404E5C;";
 var x = 0;
-var titles = ["Likelihood", "Desire", "Effort", "Negative Consequences", "Risk", "Desire to Avoid", "Effort to Avoid", "DONE"];
+var titles = ["Likelihood", "Desire", "Effort", "Negative Consequences", "Risk", "Desire to Avoid", "Effort to Avoid", ""];
+var inner = document.getElementById('wrapper')
 
 function changeTitle() {
 	document.getElementById("questionTitle").innerHTML = titles[x];
 	if (x == titles.length - 1){
 		x = titles.length - 1;
 		showTotal();
-		total = total;
+		removeButtons();
 	} else {
 		x++;
 	}
 }
 
+function removeButtons() {
+	var buttons = inner.getElementsByClassName('button');
+	console.log(buttons.length);
+	for (var i = 0; i < 10; i++) {
+		buttons[0].remove();
+		console.log(i);
+	}
+}
+
 function showTotal() {
 	document.getElementById("score").innerHTML = total;
+	if (total > 0) {
+		document.getElementById("advice").innerHTML = "Go for it";
+	} else if (total < 0) {
+		document.getElementById("advice").innerHTML = "Don't even think about it";
+	}
 }
 
 function increaseScore(z) {
-	if (x == 3 || x == 7) {
-		total += 11 - z;
-	} else {
+	if (x == 0 || x == 1 || x == 2) {
 		total += z;
+	} else if (x == 3) {
+		total += 11 - z;
+	} else if (x == 7) {
+		total += (11 - z)*-1;
+	} else if (x == 4 || x == 5 || x == 6) {
+		total -= z;
 	};
 }
 
