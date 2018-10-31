@@ -25,6 +25,20 @@
     margin: 0 auto;
 }
 
+.dText {
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #FCEB6A;
+	font-size: 5vw;
+	font-family: 'Montserrat', sans-serif;
+	position: absolute;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
 .fScore {
 	text-align: center;
 	padding-left: 20px;
@@ -84,7 +98,8 @@
 
 <html>
 <body class='body'>
-<p id='questionTitle' class='qTitle'>Positive Consequences</p><br>
+<p id='questionTitle' class='qTitle'>Positive Consequences</p>
+<p id='descriptionText' class='dText'>The good things would come out of doing the behavior.</p>
 
 <div id='wrapper'>
 
@@ -128,10 +143,12 @@ var total = 0;
 var buttonClicked = "background: #E1E6E1; border-color: #E1E6E1; color: #404E5C;";
 var x = 0;
 var titles = ["Likelihood", "Desire", "Effort", "Negative Consequences", "Risk", "Desire to Avoid", "Effort to Avoid", ""];
+var description = ["The likelihood the positive consequences would occur should you do the behavior.","How much you want the positive consequences to occur.","How difficult it is to perform the behavior.","The bad things would come out of doing the behavior. ","The risk that the negative consequences would occur should you do the behavior.","How much you want to avoid the negative consequences to occur.","How difficult it is to avoid this behavior.",""];
 var inner = document.getElementById('wrapper')
 
 function changeTitle() {
 	document.getElementById("questionTitle").innerHTML = titles[x];
+	document.getElementById("descriptionText").innerHTML = description[x];
 	if (x == titles.length - 1){
 		x = titles.length - 1;
 		showTotal();
