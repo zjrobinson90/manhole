@@ -40,7 +40,7 @@
 
 <html>
 <body>
-<p id='posConseq'>Positive Consequences</p>
+<p id='questionTitle'>Positive Consequences</p>
 
 <div id='wrapper'>
 	<div id= 'one' class='button'> 1 </div>
@@ -71,63 +71,98 @@
 </div>
 -->
 
-<p id='score'>Final Score: </p>
+<!--<div id= 'submit' class='button'> Submit </div>-->
+
+<p id='score'>Final Score</p>
 
 <div style="cursor: pointer;" onclick="theFunction()">
 
-<div id= 'submit' class='button'> Submit </div>
 
 <script>
 var total = 0;
 var buttonClicked = "background: #E1E6E1; border-color: #E1E6E1; color: #404E5C;";
+var x = 0;
+var titles = [];
+
+function changeTitle() {
+	titles = ["Likelihood", "Desire", "Effort", "Negative Consequences", "Risk", "Desire to Avoid", "Effort to Avoid", "DONE"];
+	document.getElementById("questionTitle").innerHTML = titles[x];
+	if (x == titles.length - 1){
+		x = titles.length - 1;
+		showTotal();
+	} else {
+		x++;
+	}
+}
+
+function showTotal() {
+	document.getElementById("score").innerHTML = total;
+}
 
 document.getElementById("one").addEventListener("click", function(){
-	document.getElementById("one").style.cssText = buttonClicked;
+	//this.style.cssText = buttonClicked;
 	total += 1;
+	changeTitle();
 });
 
 document.getElementById("two").addEventListener("click", function(){
-	document.getElementById("two").style.cssText = buttonClicked;
+	//this.style.cssText = buttonClicked;
 	total += 2;
+	changeTitle();
 });
 
 document.getElementById("three").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 3;
+	changeTitle();
 });
 
 document.getElementById("four").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 4;
+	changeTitle();
 });
 
 document.getElementById("five").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 5;
+	changeTitle();
 });
 
 document.getElementById("six").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 6;
+	changeTitle();
 });
 
 document.getElementById("seven").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 7;
+	changeTitle();
 });
 
 document.getElementById("eight").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 8;
+	changeTitle();
 });
 
 document.getElementById("nine").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 9;
+	changeTitle();
 });
 
 document.getElementById("ten").addEventListener("click", function(){
+	//this.style.cssText = buttonClicked;
 	total += 10;
+	changeTitle();
 });
 
 
-document.getElementById("submit").addEventListener("click", function(){
-	document.getElementById("score").innerHTML = total;
-
-});
+//document.getElementById("submit").addEventListener("click", function(){
+//	document.getElementById("score").innerHTML = total;
+//});
 
 </script>
 
