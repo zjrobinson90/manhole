@@ -1,42 +1,62 @@
 <!DOCTYPE html>
 
+<head>
+<title>Manhole</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
 <style>
 
+.body {
+	background: #E63946;
+}
+
 .qTitle {
+	text-align: center;
 	padding-left: 20px;
 	padding-right: 20px;
-	color: #404E5C;
+	color: #FCEB6A;
 	font-size: 7vw;
+	font-family: 'Montserrat', sans-serif;
+	position: absolute;
+    top:30%;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .fScore {
+	text-align: center;
 	padding-left: 20px;
 	padding-right: 20px;
-	color: #404E5C;
-	font-size: 5vw;
+	color: #FCEB6A;
+	font-size: 6vw;
+	font-family: 'Montserrat', sans-serif;
+	position: absolute;
+    top:20%;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .button {
-	background: #404E5C;
+	background: #004777;
 	height: 9vw;
 	width: 9vw;
 	text-align: center;
 	line-height: 9vw;
-	color: white;
+	color: #FCEB6A;
 	font-size: 4vw;
 	float: left;
-	border-color: #E1E6E1;
-	border: solid;
-	border-width: 1px;
+	font-family: 'Montserrat', sans-serif;
 	-webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-	margin: 2px;
+	margin: 4px;
 }
 
 .button:hover {
-	background: #E1E6E1;
-	border-color: #E1E6E1;
-	color: #404E5C;
+	background: #FCF092;
+	color: #004777;
 }
 
 .slider-wrapper {
@@ -47,16 +67,23 @@
 }
 
 #wrapper{
-	padding-left: 10px;
-	padding-right: 10px;
+    width: 100vw;
+    height: 10vh;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     overflow:auto;
+	padding: 10px;
 }
 
 </style>
 
 
 <html>
-<body>
+<body class='body'>
 <p id='questionTitle' class='qTitle'>Positive Consequences</p>
 
 <div id='wrapper'>
