@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<style>
+
+.button {
+	background: #404E5C;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	float: left;
+	border-color: #E1E6E1;
+	border: solid;
+	border-width: 1px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+	background: #E1E6E1;
+	border-color: #E1E6E1;
+	color: #404E5C;
+}
+
+
+.slider-wrapper {
+  display: inline-block;
+  width: 714px;
+  height: 50px;
+  padding: 0;
+}
+
+#wrapper{
+    overflow:auto;
+}
+
+</style>
+
+
+<html>
+<body>
+<p id='posConseq'>Positive Consequences</p>
+
+<div id='wrapper'>
+	<div id= 'one' class='button'> 1 </div>
+	<div id= 'two' class='button'> 2 </div>
+	<div id= 'three' class='button'> 3 </div>
+	<div id= 'four' class='button'> 4 </div>
+	<div id= 'five' class='button'> 5 </div>
+	<div id= 'six' class='button'> 6 </div>
+	<div id= 'seven' class='button'> 7 </div>
+	<div id= 'eight' class='button'> 8 </div>
+	<div id= 'nine' class='button'> 9 </div>
+	<div id= 'ten' class='button'> 10 </div>
+</div>
+
+<!--<p id='likely'>Likelihood</p>
+
+<div id='wrapper'>
+	<div id= 'one' class='button'> 1 </div>
+	<div id= 'two' class='button'> 2 </div>
+	<div id= 'three' class='button'> 3 </div>
+	<div id= 'four' class='button'> 4 </div>
+	<div id= 'five' class='button'> 5 </div>
+	<div id= 'six' class='button'> 6 </div>
+	<div id= 'seven' class='button'> 7 </div>
+	<div id= 'eight' class='button'> 8 </div>
+	<div id= 'nine' class='button'> 9 </div>
+	<div id= 'ten' class='button'> 10 </div>
+</div>
+-->
+
+<p id='score'>Final Score: </p>
+
+<div style="cursor: pointer;" onclick="theFunction()">
+
+<div id= 'submit' class='button'> Submit </div>
+
+<script>
+var total = 0;
+var buttonClicked = "background: #E1E6E1; border-color: #E1E6E1; color: #404E5C;";
+
+document.getElementById("one").addEventListener("click", function(){
+	document.getElementById("one").style.cssText = buttonClicked;
+	total += 1;
+});
+
+document.getElementById("two").addEventListener("click", function(){
+	document.getElementById("two").style.cssText = buttonClicked;
+	total += 2;
+});
+
+document.getElementById("three").addEventListener("click", function(){
+	total += 3;
+});
+
+document.getElementById("four").addEventListener("click", function(){
+	total += 4;
+});
+
+document.getElementById("five").addEventListener("click", function(){
+	total += 5;
+});
+
+document.getElementById("six").addEventListener("click", function(){
+	total += 6;
+});
+
+document.getElementById("seven").addEventListener("click", function(){
+	total += 7;
+});
+
+document.getElementById("eight").addEventListener("click", function(){
+	total += 8;
+});
+
+document.getElementById("nine").addEventListener("click", function(){
+	total += 9;
+});
+
+document.getElementById("ten").addEventListener("click", function(){
+	total += 10;
+});
+
+
+document.getElementById("submit").addEventListener("click", function(){
+	document.getElementById("score").innerHTML = total;
+
+});
+
+</script>
+
+</body>
+</html>
